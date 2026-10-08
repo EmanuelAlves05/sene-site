@@ -1,0 +1,1 @@
+Abra index.html com Live Server. Fundo contínuo feito com trechos da imagem de referência. Botões funcionais; ícones inferiores decorativos.
