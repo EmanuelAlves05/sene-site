@@ -1,1 +1,7 @@
-Abra index.html com Live Server. Fundo contínuo feito com trechos da imagem de referência. Botões funcionais; ícones inferiores decorativos.
+SENE21 - versão melhorada
+
+Abra index.html para visualizar.
+Para publicar no Netlify, envie o conteúdo desta pasta (index.html na raiz).
+No GitHub, substitua os arquivos do repositório pelos desta pasta, faça commit e push.
+O fundo assets/cenario-continuo.jpg foi mantido byte a byte sem alterações.
+Os cinco links originais foram preservados.

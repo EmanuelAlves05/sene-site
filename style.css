@@ -5,3 +5,36 @@
 .hero h1{font-size:clamp(40px,5.4vw,60px)}
 .links{width:min(62%,650px)}
 @media(max-width:680px){.hero{height:65vw}.links{width:82%}}
+
+
+/* Melhorias progressivas: cenário original preservado integralmente. */
+html {scroll-behavior:smooth}
+body {min-width:280px}
+.page {position:relative; min-height:100svh}
+.hero h1 {letter-spacing:-.045em; text-wrap:balance; text-shadow:0 4px 22px rgba(0,0,0,.95),0 1px 3px #000}
+.link {overflow:hidden; -webkit-tap-highlight-color:transparent; backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease,background .25s ease}
+.link::after {content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 25%,rgba(255,255,255,.10) 49%,transparent 72%);transform:translateX(-140%);transition:transform .65s ease;pointer-events:none;z-index:0}
+.link:hover::after,.link:focus-visible::after {transform:translateX(140%)}
+.link:active {transform:scale(.985)}
+.link:focus-visible {outline:3px solid white;outline-offset:4px}
+.link-name {letter-spacing:-.025em}
+.app-icon {box-shadow:inset 0 1px 1px rgba(255,255,255,.1)}
+.arrow {transition:transform .25s ease}
+.link:hover .arrow,.link:focus-visible .arrow {transform:translateX(5px)}
+.footer-icons {opacity:.9}
+@media (max-width:680px) {
+ .page {box-shadow:none}
+ .links {width: min(84%, 460px)}
+ .link {min-height:72px}
+ .hero h1 {font-size:clamp(35px,5.4vw,60px)}
+}
+@media (max-width:380px) {
+ .links {width:90%}
+ .link {min-height:65px;gap:10px}
+ .watermark {opacity:.06}
+}
+@media (prefers-reduced-motion:no-preference) {
+ .links .link {animation:enter .55s both;animation-delay:calc(var(--i,0) * 75ms)}
+ @keyframes enter {from {opacity:0;transform:translateY(14px)} to {opacity:1;transform:translateY(0)}}
+}
+@media (prefers-reduced-motion:reduce) {html{scroll-behavior:auto}.link,.link::after,.arrow{animation:none!important;transition:none!important}}
